@@ -1,5 +1,7 @@
 apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-kapt'
 
 android {
     compileSdkVersion 26
@@ -10,25 +12,55 @@ android {
         targetSdkVersion 26
         versionCode 1
         versionName "1.0"
-        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
     buildTypes {
         release {
-            minifyEnabled false
+            minifyEnabled true
+            shrinkResources true
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
 }
 
 dependencies {
-    compile fileTree(dir: 'libs', include: ['*.jar'])
-    androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
-        exclude group: 'com.android.support', module: 'support-annotations'
-    })
-    compile 'com.android.support:appcompat-v7:26.1.0'
-    compile 'com.android.support.constraint:constraint-layout:1.0.2'
-    testCompile 'junit:junit:4.12'
-    compile "org.jetbrains.kotlin:kotlin-stdlib-jre7:$kotlin_version"
+    implementation(
+            // Kotlin
+            "org.jetbrains.kotlin:kotlin-stdlib-jre7:$kotlin_version",
+
+            // Support
+            "com.android.support:appcompat-v7:$support",
+            "com.android.support.constraint:constraint-layout:$constraint",
+
+            // Daagger
+            "com.google.dagger:dagger:$dagger2",
+
+            // Timber
+            "com.jakewharton.timber:timber:$timber",
+
+            // Stetho
+            "com.facebook.stetho:stetho:$stetho",
+
+            // Rx
+            "io.reactivex.rxjava2:rxandroid:$rxandroid",
+            "io.reactivex.rxjava2:rxjava:$rxjava",
+
+            // Room
+            "android.arch.persistence.room:runtime:$room",
+            "android.arch.persistence.room:rxjava2:$room",
+
+            // Moxy
+            "com.arello-mobile:moxy:$moxy",
+            "com.arello-mobile:moxy-app-compat:$moxy"
+    )
+
+    debugImplementation "com.squareup.leakcanary:leakcanary-android:$leakcanary"
+    releaseImplementation "com.squareup.leakcanary:leakcanary-android-no-op:$leakcanary"
+
+    kapt(
+            "com.google.dagger:dagger-compiler:$dagger2",
+            "android.arch.persistence.room:compiler:$room",
+            "com.arello-mobile:moxy-compiler:$moxy"
+    )
 }
 repositories {
     mavenCentral()

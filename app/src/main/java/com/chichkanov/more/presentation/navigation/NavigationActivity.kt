@@ -1,7 +1,8 @@
-package com.chichkanov.more
+package com.chichkanov.more.presentation.navigation
 
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
+import com.chichkanov.more.R
 
 class NavigationActivity : AppCompatActivity() {
 
