@@ -12,6 +12,10 @@ android {
         targetSdkVersion 26
         versionCode 1
         versionName "1.0"
+        vectorDrawables.useSupportLibrary = true
+    }
+    compileOptions {
+        incremental = false
     }
     buildTypes {
         release {
@@ -30,6 +34,7 @@ dependencies {
             // Support
             "com.android.support:appcompat-v7:$support",
             "com.android.support.constraint:constraint-layout:$constraint",
+            "com.android.support:design:$support",
 
             // Daagger
             "com.google.dagger:dagger:$dagger2",
@@ -50,7 +55,9 @@ dependencies {
 
             // Moxy
             "com.arello-mobile:moxy:$moxy",
-            "com.arello-mobile:moxy-app-compat:$moxy"
+            "com.arello-mobile:moxy-app-compat:$moxy",
+
+            "com.thebluealliance:spectrum:0.7.1"
     )
 
     debugImplementation "com.squareup.leakcanary:leakcanary-android:$leakcanary"

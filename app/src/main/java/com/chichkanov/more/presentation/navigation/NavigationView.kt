@@ -4,5 +4,7 @@ import com.arellomobile.mvp.MvpView
 
 interface NavigationView : MvpView {
 
-    fun openReminder(id: Long)
+    fun openEditNote(id: Long)
+
+    fun openNotes()
 }

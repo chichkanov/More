@@ -20,7 +20,7 @@ class App : Application() {
             return
         }
         LeakCanary.install(this)
-        Timber.plant()
+        Timber.plant(Timber.DebugTree())
         Stetho.initializeWithDefaults(this)
         initDatgger()
     }
