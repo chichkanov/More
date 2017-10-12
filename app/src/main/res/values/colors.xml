@@ -3,4 +3,13 @@
     <color name="colorPrimary">#3F51B5</color>
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
+
+    <color name="dark_grey">#858585</color>
+
+    <array name="note_color_palette">
+        <item>@android:color/holo_red_dark</item>
+        <item>@android:color/holo_green_dark</item>
+        <item>@android:color/holo_blue_dark</item>
+        <item>@android:color/holo_orange_dark</item>
+    </array>
 </resources>

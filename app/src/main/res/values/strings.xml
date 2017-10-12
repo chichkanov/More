@@ -1,3 +1,13 @@
 <resources>
+
+    <!--Global-->
     <string name="app_name">More</string>
+
+    <!--Notes-->
+    <string name="notes_title">Notes</string>
+
+    <!--Edit Note-->
+    <string name="edit_note_title_hint">Title</string>
+    <string name="edit_note_description_hint">Description</string>
+
 </resources>
