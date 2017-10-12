@@ -56,8 +56,6 @@ dependencies {
             // Moxy
             "com.arello-mobile:moxy:$moxy",
             "com.arello-mobile:moxy-app-compat:$moxy",
-
-            "com.thebluealliance:spectrum:0.7.1"
     )
 
     debugImplementation "com.squareup.leakcanary:leakcanary-android:$leakcanary"
