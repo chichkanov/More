@@ -9,6 +9,7 @@ import com.arellomobile.mvp.presenter.InjectPresenter
 import com.arellomobile.mvp.presenter.ProvidePresenter
 import com.chichkanov.more.App
 import com.chichkanov.more.R
+import com.chichkanov.more.model.Note
 import com.chichkanov.more.presentation.base.Navigator
 import kotlinx.android.synthetic.main.fragment_edit_note.*
 
@@ -30,7 +31,10 @@ class EditNoteFragment : MvpAppCompatFragment(), EditNoteView {
 
     override fun onViewCreated(view: View?, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        ib_edit_note_close.setOnClickListener({ presenter.onCloseClick() })
+        ib_edit_note_close.setOnClickListener({
+            val note = Note(et_edit_note_title.text.toString(), et_edit_note_desc.text.toString())
+            presenter.onCloseClick(note)
+        })
     }
 
     override fun goBack() {

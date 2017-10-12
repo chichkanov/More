@@ -20,6 +20,9 @@ class NavigationActivity : MvpAppCompatActivity(), NavigationView {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_navigation)
+        if(savedInstanceState == null){
+            openNotes()
+        }
     }
 
     override fun openEditNote(id: Long) {
